@@ -68,5 +68,3 @@ public class Employee {
         ROLE_EMPLOYEE, ROLE_MANAGER, ROLE_ADMIN
     }
 }
-light over impact property lake kid spy shallow surprise traffic fever cricket
-git remote add origin https://github.com/Joy-Euse/employee-management-system.git

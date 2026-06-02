@@ -55,7 +55,10 @@ public class PayslipDTO {
      */
     public Payslip toEntity(Employee employee) {
         Payslip payslip = new Payslip();
-        payslip.setId(this.id);
+        // Don't set ID for new entities (only set for updates)
+        if (this.id != null) {
+            payslip.setId(this.id);
+        }
         payslip.setEmployee(employee);
         payslip.setHouseAmount(this.houseAmount);
         payslip.setTransportAmount(this.transportAmount);

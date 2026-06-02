@@ -55,7 +55,7 @@ public class EmployeeDTO {
      */
     public Employee toEntity() {
         Employee employee = new Employee();
-        employee.setId(this.id);
+        // Do NOT set id — let the database generate it via @GeneratedValue
         employee.setCode(this.code);
         employee.setFirstName(this.firstName);
         employee.setLastName(this.lastName);
