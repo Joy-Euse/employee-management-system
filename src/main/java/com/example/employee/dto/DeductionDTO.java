@@ -40,7 +40,10 @@ public class DeductionDTO {
      */
     public Deduction toEntity() {
         Deduction deduction = new Deduction();
-        deduction.setId(this.id);
+        // Don't set ID for new entities (only set for updates)
+        if (this.id != null) {
+            deduction.setId(this.id);
+        }
         deduction.setCode(this.code);
         deduction.setDeductionName(this.deductionName);
         deduction.setPercentage(this.percentage);
