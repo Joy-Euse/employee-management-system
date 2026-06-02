@@ -54,7 +54,10 @@ public class EmploymentDTO {
      */
     public Employment toEntity(Employee employee) {
         Employment employment = new Employment();
-        employment.setId(this.id);
+        // Don't set ID for new entities (only set for updates)
+        if (this.id != null) {
+            employment.setId(this.id);
+        }
         employment.setCode(this.code);
         employment.setEmployee(employee);
         employment.setDepartment(this.department);

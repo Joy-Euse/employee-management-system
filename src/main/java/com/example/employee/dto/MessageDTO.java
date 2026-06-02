@@ -52,7 +52,10 @@ public class MessageDTO {
      */
     public Message toEntity(Employee employee) {
         Message message = new Message();
-        message.setId(this.id);
+        // Don't set ID for new entities (only set for updates)
+        if (this.id != null) {
+            message.setId(this.id);
+        }
         message.setEmployee(employee);
         message.setContent(this.content);
         message.setMonth(this.month);
